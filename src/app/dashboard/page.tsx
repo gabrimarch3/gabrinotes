@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { Separator } from "@radix-ui/react-separator";
 import { ArrowLeft } from "lucide-react";
+import CreateNoteDialog from "@/components/CreateNoteDialog";
 import Link from "next/link";
 import React from "react";
 
@@ -34,6 +35,10 @@ const DashboardPage = (props: Props) => {
 
           <div className="text-center">
             <h2 className="text-xl text-gray-500">Non hai ancora nessuna nota!</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-3 md:grid-cols-5 grid-cols-1 gap-3">
+            <CreateNoteDialog />
           </div>
         </div>
       </div>
