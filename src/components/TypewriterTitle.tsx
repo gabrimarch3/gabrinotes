@@ -2,6 +2,7 @@
 
 import React from "react";
 import Typewriter from "typewriter-effect";
+import GraphemeSplitter from 'grapheme-splitter';
 
 type Props = {};
 
@@ -12,9 +13,9 @@ const TypeWriterTitle = (props: Props) => {
         loop: true,
       }}
       onInit={(typewriter) => {
-        typewriter.typeString("🚀 Fai volare la tua produttività.")
+        typewriter.typeString(`🚀Fai volare la tua produttività.`)
         .pauseFor(1000).deleteAll()
-        .typeString("🤖 Fatti guidare dall'IA.")
+        .typeString("🤖Fatti guidare dall'IA.")
         .start();
       }}
     />

@@ -18,36 +18,41 @@ import { useRouter } from "next/navigation";
 
 type Props = {};
 
+/**
+ * CreateNoteDialog component displays a dialog for creating a new note.
+ * It contains a form with input for the note name, and a mutation hook for submitting the creation request.
+ * On successful creation, it navigates to the new note page.
+ */
 const CreateNoteDialog = (props: Props) => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const createNotebook = useMutation({
     mutationFn: async () => {
-        const response = await axios.post('/api/createNoteBook', {
-            name: input,
-        });
-        return response.data
-    }
-  })
+      const response = await axios.post("/api/createNoteBook", {
+        name: input,
+      });
+      return response.data;
+    },
+  });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(input === '') {
-        window.alert('Devi inserire un nome per la tua nota.');
-        return
+    if (input === "") {
+      window.alert("Devi inserire un nome per la tua nota.");
+      return;
     }
     createNotebook.mutate(undefined, {
-        onSuccess: ({note_id}) => {
-            console.log({note_id})
-            router.push(`/notebook/${note_id}`)
-        },
-        onError: error => {
-            console.error(error);
-            window.alert('Impossibile creare la nota!')
-        }
-    })
-  }
+      onSuccess: ({ note_id }) => {
+        console.log({ note_id });
+        router.push(`/notebook/${note_id}`);
+      },
+      onError: (error) => {
+        console.error(error);
+        window.alert("Impossibile creare la nota!");
+      },
+    });
+  };
 
   return (
     <Dialog>
@@ -65,16 +70,27 @@ const CreateNoteDialog = (props: Props) => {
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
-            <Input value={input} onChange={e=>setInput(e.target.value)} placeholder="...la tua nota"/>
-            <div className="h-4"></div>
-            <div className="flex items-center gap-2">
-                <Button type="reset" variant='secondary'>Cancella</Button>
-                <Button type="submit" className="bg-green-600" disabled={createNotebook.isPending}>
-                  {createNotebook.isPending && (
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin"/>
-                  ) } Genera
-                </Button>
-            </div>
+          <Input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="...la tua nota"
+          />
+          <div className="h-4"></div>
+          <div className="flex items-center gap-2">
+            <Button type="reset" variant="secondary">
+              Cancella
+            </Button>
+            <Button
+              type="submit"
+              className="bg-green-600"
+              disabled={createNotebook.isPending}
+            >
+              {createNotebook.isPending && (
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              )}{" "}
+              Genera
+            </Button>
+          </div>
         </form>
       </DialogContent>
     </Dialog>
