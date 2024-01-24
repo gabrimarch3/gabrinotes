@@ -1,4 +1,4 @@
-# GabriNotes 📝 - Un'evoluzione di Notion con NextJS 13, DALL•E, DrizzleORM, OpenAI e Vercel 🚀
+# NoteAI 📝 - Un'evoluzione di Notion con NextJS 13, DALL•E, DrizzleORM, OpenAI e Vercel 🚀
 
 ## Indice
 - [Introduzione](#introduzione)
@@ -12,10 +12,10 @@
 - [Supporto e Contributi](#supporto-e-contributi)
 
 ## Introduzione
-Benvenuti nel repository di GabriNotes, un'innovativa piattaforma che ridefinisce il modo di organizzare e visualizzare contenuti. GabriNotes, basato sul concetto di Notion Clone, incorpora tecnologie all'avanguardia come NextJS 13, DALL•E di OpenAI, DrizzleORM e Vercel per offrire un'esperienza utente superlativa.
+Benvenuti nel repository di NoteAI, un'innovativa piattaforma che ridefinisce il modo di organizzare e visualizzare contenuti. GabriNotes, basato sul concetto di Notion Clone, incorpora tecnologie all'avanguardia come NextJS 13, DALL•E di OpenAI, DrizzleORM e Vercel per offrire un'esperienza utente superlativa.
 
 ## Funzionalità Principali
-GabriNotes spinge i confini della produttività e della creatività con le sue funzionalità distintive:
+NoteAI spinge i confini della produttività e della creatività con le sue funzionalità distintive:
 
 - **Editor di Testo Avanzato**: Scrivi e formatta i tuoi documenti con facilità, avvalendoti di un editor potente e flessibile.
 - **Generazione di Immagini con DALL•E**: Arricchisci i tuoi appunti con immagini generate tramite intelligenza artificiale, rendendo ogni pagina unica e visivamente stimolante. 🎨
